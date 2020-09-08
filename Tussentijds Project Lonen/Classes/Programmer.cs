@@ -8,27 +8,21 @@ namespace Tussentijds_Project_Lonen.Classes
 {
     public class Programmer : Employee
     {
-        public bool CompanyCar { get; set; }
         public double WithholdingTax { get; set; }
         public Programmer(string name, bool sex, DateTime birthdate, DateTime joindate,
-            bool fulltime, int seniority, bool companycar):base(name, sex, birthdate, joindate, fulltime, seniority)
+            int hours, int seniority, bool companycar, double startingsalary):base(name, sex, birthdate, joindate, hours, seniority, startingsalary)
         {
             Name = name;
             Sex = sex;
             Birthdate = birthdate;
-            Fulltime = fulltime;
-            StartingSalary = Fulltime ? StartingSalary = 2200 : StartingSalary = 1447.36;
+            Hours = hours;
             JoinDate = joindate;
             GenerateSocialSec();
-            Salary = StartingSalary;
+            StartingSalary = startingsalary;
             Seniority = seniority;
             CompanyCar = companycar;
             WithholdingTax = CompanyCar ? WithholdingTax = 17.30 : WithholdingTax = 13.68;
-        }
-        public void ProgrammerWitholdingTax()
-        {
-            if (CompanyCar) Salary -= (Salary * 0.1730);
-            else DeductWitholdingTax();
+            Title = "Programmer";
         }
     }
 }

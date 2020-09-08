@@ -32,9 +32,9 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
-            this.lblName = new System.Windows.Forms.Label();
             this.lblSex = new System.Windows.Forms.Label();
             this.lblJoindate = new System.Windows.Forms.Label();
+            this.lbltest = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbEmployees
@@ -54,6 +54,7 @@
             this.btnNew.TabIndex = 1;
             this.btnNew.Text = "New Employee";
             this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // btnEdit
             // 
@@ -63,6 +64,7 @@
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Edit Employee";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnRemove
             // 
@@ -73,19 +75,10 @@
             this.btnRemove.Text = "Remove Employee";
             this.btnRemove.UseVisualStyleBackColor = true;
             // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(211, 96);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(35, 13);
-            this.lblName.TabIndex = 4;
-            this.lblName.Text = "label1";
-            // 
             // lblSex
             // 
             this.lblSex.AutoSize = true;
-            this.lblSex.Location = new System.Drawing.Point(211, 118);
+            this.lblSex.Location = new System.Drawing.Point(211, 107);
             this.lblSex.Name = "lblSex";
             this.lblSex.Size = new System.Drawing.Size(35, 13);
             this.lblSex.TabIndex = 5;
@@ -94,20 +87,29 @@
             // lblJoindate
             // 
             this.lblJoindate.AutoSize = true;
-            this.lblJoindate.Location = new System.Drawing.Point(211, 141);
+            this.lblJoindate.Location = new System.Drawing.Point(211, 130);
             this.lblJoindate.Name = "lblJoindate";
             this.lblJoindate.Size = new System.Drawing.Size(35, 13);
             this.lblJoindate.TabIndex = 6;
             this.lblJoindate.Text = "label3";
+            // 
+            // lbltest
+            // 
+            this.lbltest.AutoSize = true;
+            this.lbltest.Location = new System.Drawing.Point(211, 152);
+            this.lbltest.Name = "lbltest";
+            this.lbltest.Size = new System.Drawing.Size(35, 13);
+            this.lbltest.TabIndex = 7;
+            this.lbltest.Text = "label3";
             // 
             // Employees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(372, 274);
+            this.Controls.Add(this.lbltest);
             this.Controls.Add(this.lblJoindate);
             this.Controls.Add(this.lblSex);
-            this.Controls.Add(this.lblName);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnNew);
@@ -126,8 +128,8 @@
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnRemove;
-        private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblSex;
         private System.Windows.Forms.Label lblJoindate;
+        private System.Windows.Forms.Label lbltest;
     }
 }

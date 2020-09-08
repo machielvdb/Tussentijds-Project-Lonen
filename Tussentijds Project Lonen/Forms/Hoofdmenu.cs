@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,9 +24,10 @@ namespace Tussentijds_Project_Lonen
 
         private void Hoofdmenu_Load(object sender, EventArgs e)
         {
+            // Generate first employee and add it to list "Database" initiated above.
             DateTime birthdate = new DateTime(1995, 12, 02);
             DateTime joindate = new DateTime(2020, 09, 01);
-            Programmer newProgrammer = new Programmer("Machiel Vandenbussche", true, birthdate, joindate, true, 3, true);
+            Programmer newProgrammer = new Programmer("Machiel Vandenbussche", true, birthdate, joindate, 38, 2, true, 2200);
             empoyeeList.Add(newProgrammer);
         }
 
@@ -33,6 +35,22 @@ namespace Tussentijds_Project_Lonen
         {
             Employees f = new Employees();
             f.Show();
+        }
+
+        private void btnEndMonth_Click(object sender, EventArgs e)
+        {
+            string root = $@"C:\Users\Machiel\source\repos\Tussentijds Project Lonen\Tussentijds Project Lonen\bin\Debug\PAYSLIPS{DateTime.Today.ToString(" MM yyyy")}\";
+            // If directory does not exist, create it. 
+            if (!Directory.Exists(root))
+            {
+                Directory.CreateDirectory(root);
+
+                foreach (var item in Hoofdmenu.empoyeeList)
+                {
+                    item.GeneratePayslip(root);
+                }
+            }
+            else MessageBox.Show("Directory already exists.");
         }
     }
 }

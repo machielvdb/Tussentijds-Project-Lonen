@@ -12,19 +12,20 @@ namespace Tussentijds_Project_Lonen.Classes
         public double RemoteBonus = 50;
         public double CourseRefund = 19.50;
 
-        public Support(string name, bool sex, DateTime birthdate, DateTime joindate, double salary, bool fulltime, int seniority, bool itsupport)
-            :base(name, sex, birthdate, joindate, fulltime, seniority)
+        public Support(string name, bool sex, DateTime birthdate, DateTime joindate, double salary, int hours, int seniority, bool itsupport, double startingsalary, string title)
+            :base(name, sex, birthdate, joindate, hours, seniority, startingsalary)
         {
             Name = name;
             Sex = sex;
             Birthdate = birthdate;
             JoinDate = joindate;
             GenerateSocialSec();
-            Fulltime = fulltime;
-            StartingSalary = Fulltime ? StartingSalary = 2050 : StartingSalary = 1348.68;
+            Hours = hours;
+            StartingSalary = salary;
             Salary = salary;
             Seniority = seniority;
             ITSupport = itsupport;
+            Title = ITSupport ? Title = "IT Support" : Title = "CS Support";
         }
 
         public override string ToString()

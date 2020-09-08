@@ -28,14 +28,25 @@ namespace Tussentijds_Project_Lonen.Forms
         private void lbEmployees_SelectedIndexChanged(object sender, EventArgs e)
         {
             Employee selectedEmployee = lbEmployees.SelectedItem as Employee;
-            lblName.Text = selectedEmployee.Name;
             lblJoindate.Text = "Joined: " + selectedEmployee.JoinDate.ToShortDateString();
             if (selectedEmployee.Sex)
-            {
                 lblSex.Text = "Male";
-            }
-
             else lblSex.Text = "Female";
+
+            lbltest.Text = selectedEmployee.SocialSecNr;
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            NewEmployee f = new NewEmployee();
+            f.Show();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            Employee selectedEmployee = lbEmployees.SelectedItem as Employee;
+            NewEmployee f = new NewEmployee(selectedEmployee);
+            f.Show();
         }
     }
 }

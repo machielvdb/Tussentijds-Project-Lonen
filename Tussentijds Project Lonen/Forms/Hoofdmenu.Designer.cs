@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnEmployees = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnEndMonth = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEmployees
@@ -42,21 +42,22 @@
             this.btnEmployees.UseVisualStyleBackColor = true;
             this.btnEmployees.Click += new System.EventHandler(this.btnEmployees_Click);
             // 
-            // button2
+            // btnEndMonth
             // 
-            this.button2.Location = new System.Drawing.Point(12, 41);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(131, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEndMonth.Location = new System.Drawing.Point(12, 41);
+            this.btnEndMonth.Name = "btnEndMonth";
+            this.btnEndMonth.Size = new System.Drawing.Size(131, 23);
+            this.btnEndMonth.TabIndex = 1;
+            this.btnEndMonth.Text = "End Month";
+            this.btnEndMonth.UseVisualStyleBackColor = true;
+            this.btnEndMonth.Click += new System.EventHandler(this.btnEndMonth_Click);
             // 
             // Hoofdmenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(151, 149);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(151, 73);
+            this.Controls.Add(this.btnEndMonth);
             this.Controls.Add(this.btnEmployees);
             this.Name = "Hoofdmenu";
             this.Text = "Hoofdmenu";
@@ -68,7 +69,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnEmployees;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnEndMonth;
     }
 }
 
